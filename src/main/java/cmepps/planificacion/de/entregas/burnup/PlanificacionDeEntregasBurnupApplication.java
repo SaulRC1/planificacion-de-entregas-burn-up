@@ -8,6 +8,7 @@ public class PlanificacionDeEntregasBurnupApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(PlanificacionDeEntregasBurnupApplication.class, args);
+        System.out.println("Hola de parte de Ismael");
     }
 
 }
