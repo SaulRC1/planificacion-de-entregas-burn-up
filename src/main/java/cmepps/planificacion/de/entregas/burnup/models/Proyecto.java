@@ -1,10 +1,24 @@
 package cmepps.planificacion.de.entregas.burnup.models;
 
+import java.util.List;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+
 /**
  *
  * @author Saúl Rodríguez Naranjo
  */
+@Entity
+@Table(name = "proyecto")
 public class Proyecto {
+    
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private long idProyecto;
     
     private String nombreDeProyecto;
     
@@ -12,6 +26,9 @@ public class Proyecto {
     private int duracionDelSprint;
     
     private int velocidadDelEquipo;
+    
+    @OneToMany(mappedBy = "proyecto")
+    private List<HistoriaDeUsuario> historiasDeUsuario;
 
     public Proyecto() {
     }
@@ -45,7 +62,21 @@ public class Proyecto {
     public void setVelocidadDelEquipo(int velocidadDelEquipo) {
         this.velocidadDelEquipo = velocidadDelEquipo;
     }
-    
-    
+
+    public List<HistoriaDeUsuario> getHistoriasDeUsuario() {
+        return historiasDeUsuario;
+    }
+
+    public void setHistoriasDeUsuario(List<HistoriaDeUsuario> historiasDeUsuario) {
+        this.historiasDeUsuario = historiasDeUsuario;
+    }
+
+    public long getIdProyecto() {
+        return idProyecto;
+    }
+
+    public void setIdProyecto(long idProyecto) {
+        this.idProyecto = idProyecto;
+    }
     
 }
