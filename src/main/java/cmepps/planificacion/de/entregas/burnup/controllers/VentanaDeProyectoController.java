@@ -1,9 +1,16 @@
 package cmepps.planificacion.de.entregas.burnup.controllers;
 
+import cmepps.planificacion.de.entregas.burnup.models.HistoriaDeUsuario;
 import cmepps.planificacion.de.entregas.burnup.models.Proyecto;
+import cmepps.planificacion.de.entregas.burnup.persistence.services.HistoriaDeUsuarioService;
+import cmepps.planificacion.de.entregas.burnup.persistence.services.ProyectoService;
+import java.util.List;
+import org.jboss.logging.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 /**
@@ -14,16 +21,32 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/ventana-de-proyecto")
 public class VentanaDeProyectoController {
 
-    @GetMapping
-    public String doGet(ModelMap model) {
+    @Autowired
+    private ProyectoService proyectoService;
+    
+    @Autowired
+    private HistoriaDeUsuarioService historiaService;
+    
+    @GetMapping(path = "/{nombreDeProyecto}")
+    public String doGet(ModelMap model, @PathVariable String nombreDeProyecto) {
         
-        Proyecto proyecto = new Proyecto();
+        Proyecto proyecto = proyectoService.getProyectoByName(nombreDeProyecto);
         
-        proyecto.setNombreDeProyecto("Mi Primer Proyecto");
+        if(proyecto != null) {
+            
+            model.addAttribute("proyecto", proyecto);
         
-        model.addAttribute("proyecto", proyecto);
+            return "historia-2/tarea-1/ventana-de-proyecto";
+            
+        } else {
+            
+            model.addAttribute("errorNombre", nombreDeProyecto);
+            
+            return "historia-2/tarea-1/error-proyecto-inexistente";
+            
+        }
         
-        return "historia-2/tarea-1/ventana-de-proyecto";
+        
     }
     
 }
