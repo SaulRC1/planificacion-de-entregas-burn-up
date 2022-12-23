@@ -1,0 +1,21 @@
+* {
+    padding: 5px;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+}
+
+#user-div input{
+    width: 200px;
+}
+
+#description-div input{
+    width: 300px;
+}
+
+#listado-tareas{
+    border-collapse: collapse;
+    margin-bottom: 15px;
+}
