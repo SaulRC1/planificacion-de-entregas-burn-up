@@ -17,13 +17,7 @@ public class VentanaPedirDatosController {
     @GetMapping
     public String doGet(ModelMap model) {
         
-        Proyecto proyecto = new Proyecto();
-        
-        proyecto.setNombreDeProyecto("Mi Primer Proyecto");
-        
-        model.addAttribute("proyecto", proyecto);
-        
-        return "historia-1/tarea-2/ventana-introducir-datos";
+        return "historia-1/tarea-1/ventana-introducir-datos";
     }
     
 }

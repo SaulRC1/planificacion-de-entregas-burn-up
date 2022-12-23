@@ -16,10 +16,14 @@ uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
     <script
       src="${pageContext.request.contextPath}/js/historia-1/tarea-1/ventana-inicial.js"
       defer></script>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="${pageContext.request.contextPath}/css/historia-1/tarea-1/estilo-ventana-inicial.css" />
   </head>
 
   <body>
-    <div>
+    <div class="menu">
       <button id="id-boton-crear-proyecto" type="button">Crear Proyecto</button>
     </div>
   </body>
