@@ -1,0 +1,28 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+}
+
+.main-div {
+    height: 100%;
+    width: 100%;
+    min-width: 576px;
+    background-color: red;
+}
+
+.div-titulo {
+    width: 100%;
+    height: 50px;
+    background-color: green;
+}
+
+.menu-div {
+    width: 100%;
+    height: 50px;
+    background-color: purple;
+}
