@@ -1,0 +1,12 @@
+.menu {
+  background-color: grey;
+  border: black solid 2px;
+  width: 100%;
+  height: auto;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
