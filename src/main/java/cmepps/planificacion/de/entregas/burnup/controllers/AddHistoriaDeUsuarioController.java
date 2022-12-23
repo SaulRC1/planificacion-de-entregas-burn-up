@@ -19,5 +19,4 @@ public class AddHistoriaDeUsuarioController {
     public String doGet(ModelMap model) {
         return "historia-3/tarea-1/add-historia-de-usuario";
     }
-    
 }
