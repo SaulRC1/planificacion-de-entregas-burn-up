@@ -5,6 +5,7 @@ import cmepps.planificacion.de.entregas.burnup.models.Proyecto;
 import cmepps.planificacion.de.entregas.burnup.persistence.services.HistoriaDeUsuarioService;
 import cmepps.planificacion.de.entregas.burnup.persistence.services.ProyectoService;
 import java.util.List;
+import javax.servlet.http.HttpSession;
 import org.jboss.logging.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -28,11 +29,13 @@ public class VentanaDeProyectoController {
     private HistoriaDeUsuarioService historiaService;
     
     @GetMapping(path = "/{nombreDeProyecto}")
-    public String doGet(ModelMap model, @PathVariable String nombreDeProyecto) {
+    public String doGet(ModelMap model, @PathVariable String nombreDeProyecto, HttpSession session) {
         
         Proyecto proyecto = proyectoService.getProyectoByName(nombreDeProyecto);
         
         if(proyecto != null) {
+            
+            session.setAttribute("proyecto", proyecto);
             
             model.addAttribute("proyecto", proyecto);
         

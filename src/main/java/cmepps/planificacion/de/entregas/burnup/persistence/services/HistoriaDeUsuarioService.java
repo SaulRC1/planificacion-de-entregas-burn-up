@@ -15,6 +15,8 @@ import java.util.Optional;
 public interface HistoriaDeUsuarioService {
     public Optional<HistoriaDeUsuario> getHistoriaById(long id);
     
+    public HistoriaDeUsuario getHistoriaByName(String nombreHistoria);
+    
     public void saveHistoriaDeUsuario(HistoriaDeUsuario historia);
     
     public void updateHistoriaDeUsuario(HistoriaDeUsuario historia);

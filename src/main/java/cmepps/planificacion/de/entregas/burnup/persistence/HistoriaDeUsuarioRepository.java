@@ -13,4 +13,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
  */
 public interface HistoriaDeUsuarioRepository extends JpaRepository<HistoriaDeUsuario, Long>{
     
+    public HistoriaDeUsuario findByNombreDeHistoria(String nombreHistoria);
+    
 }

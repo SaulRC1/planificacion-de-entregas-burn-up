@@ -41,4 +41,9 @@ public class HistoriaDeUsuarioServiceImpl implements HistoriaDeUsuarioService {
         
     }
 
+    @Override
+    public HistoriaDeUsuario getHistoriaByName(String nombreHistoria) {
+        return historiaRepository.findByNombreDeHistoria(nombreHistoria);
+    }
+
 }
