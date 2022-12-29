@@ -1,6 +1,7 @@
 package cmepps.planificacion.de.entregas.burnup.models;
 
 import java.util.List;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -78,5 +79,6 @@ public class Proyecto {
     public void setIdProyecto(long idProyecto) {
         this.idProyecto = idProyecto;
     }
+    
     
 }

@@ -4,15 +4,13 @@
  */
 package cmepps.planificacion.de.entregas.burnup.persistence;
 
-import cmepps.planificacion.de.entregas.burnup.models.Proyecto;
 import org.springframework.data.jpa.repository.JpaRepository;
+import cmepps.planificacion.de.entregas.burnup.models.Tarea;
 
 /**
  *
  * @author SaulWorkStation
  */
-public interface ProyectoRepository extends JpaRepository<Proyecto, Long>{
+public interface TareaRepository extends JpaRepository<Tarea, Long>{
     
-    public Proyecto findByNombreDeProyecto(String nombreDeProyecto);
-            
 }

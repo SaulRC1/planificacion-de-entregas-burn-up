@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Interface.java to edit this template
- */
 package cmepps.planificacion.de.entregas.burnup.persistence.services;
 
 import cmepps.planificacion.de.entregas.burnup.models.Proyecto;
@@ -15,6 +11,8 @@ import java.util.Optional;
 public interface ProyectoService {
     
     public Optional<Proyecto> getProyectoById(long id);
+    
+    public Proyecto getProyectoByName(String nombreDeProyecto);
     
     public List<Proyecto> findAll();
     

@@ -1,6 +1,7 @@
 package cmepps.planificacion.de.entregas.burnup.models;
 
 import java.util.List;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -94,6 +95,11 @@ public class HistoriaDeUsuario {
 
     public void setIdHistoriaDeUsuario(long idHistoriaDeUsuario) {
         this.idHistoriaDeUsuario = idHistoriaDeUsuario;
+    }
+
+    @Override
+    public String toString() {
+        return "HistoriaDeUsuario{" + "idHistoriaDeUsuario=" + idHistoriaDeUsuario + ", usuario=" + usuario + ", nombreDeHistoria=" + nombreDeHistoria + ", descripcion=" + descripcion + ", valorAportado=" + valorAportado + ", proyecto=" + proyecto + '}';
     }
     
 }
