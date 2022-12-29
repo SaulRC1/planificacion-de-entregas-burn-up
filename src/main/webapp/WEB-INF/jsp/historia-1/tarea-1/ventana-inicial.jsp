@@ -24,7 +24,9 @@ uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
   <body>
     <div class="menu">
-      <button id="id-boton-crear-proyecto" type="button">Crear Proyecto</button>
+      <a href="${pageContext.request.contextPath}/ventana-pedir-datos"
+        >Crear Proyecto</a
+      >
     </div>
   </body>
 </html>
