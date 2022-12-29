@@ -34,16 +34,13 @@
             </div>
             <!--------------------------------->
 
-            <!-- Botones para editar y eliminar la historia -->
-            <div>
-                <button type = "button" id="boton-editarHistoria">Editar</button>
-                <button type = "button" id="boton-eliminarHistoria">Eliminar</button>
-            </div>
-            <!--------------------------------->
-
             <!-- Listado de las tareas y boton para crear una nueva -->
             <div>
-                <br/><p>Tareas Asociadas: </p>
+                <br/>Tareas Asociadas:
+                <button type = "button" id="boton-editarHistoria">Editar</button>
+                <button type = "button" id="boton-eliminarHistoria">Eliminar</button>
+                <button type = "button" id="boton-añadirTarea">Añadir nueva Tarea</button>
+                
                 <table id="listado-tareas" border="1">
                     <tr>
                         <th>Tarea</th>
@@ -64,8 +61,6 @@
                         <td>Tarea 1.1 destinada a la historia 1</td>
                     </tr>
                 </table>
-                
-                <button type = "button" id="boton-añadirTarea">Añadir nueva Tarea</button>
             </div>
             <!--------------------------------->
         </div>
