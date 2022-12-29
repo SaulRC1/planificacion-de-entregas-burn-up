@@ -13,9 +13,17 @@ html, body {
 
 #description-div input{
     width: 300px;
+    margin-bottom: 10px;
 }
 
 #listado-tareas{
+    text-align: center;
+    width: 500px;
     border-collapse: collapse;
-    margin-bottom: 15px;
+    margin-top: 10px;
+}
+
+div button{
+    padding: 5px 10px;
+    margin-left: 20px;
 }
