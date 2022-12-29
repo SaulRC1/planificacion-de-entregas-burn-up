@@ -7,6 +7,8 @@
         <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/historia-4/tarea-1-3/ventana-tarea.css">
         <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/clases-comunes/flexbox.css">
         <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/clases-comunes/fuentes.css">
+        
+        <script src="${pageContext.request.contextPath}/js/historia-4/tarea-1-3/ventana-tarea.js" defer></script>
     </head>
     <body>
         <div class="roboto-condensed">
@@ -41,8 +43,8 @@
             </div>
             
             <div>
-                <button type = "button" >Cancelar</button>
-                <button type = "button" >OK</button>
+                <button type = "button" id="boton-cancelarTarea">Cancelar</button>
+                <button type = "button" id="boton-okTarea">OK</button>
             </div>
         </div>
     </body>
