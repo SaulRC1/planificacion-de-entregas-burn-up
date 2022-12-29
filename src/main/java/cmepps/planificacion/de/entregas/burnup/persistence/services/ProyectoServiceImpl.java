@@ -42,4 +42,9 @@ public class ProyectoServiceImpl implements ProyectoService {
         return proyectoRepository.findAll();
     }
 
+    @Override
+    public Proyecto getProyectoByName(String nombreDeProyecto) {
+        return proyectoRepository.findByNombreDeProyecto(nombreDeProyecto);
+    }
+
 }

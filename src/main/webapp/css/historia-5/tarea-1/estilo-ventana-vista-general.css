@@ -1,0 +1,31 @@
+.estilo-tabla {
+  border-collapse: collapse;
+  border: black solid 2px;
+  width: 89%;
+  margin-left: 100px;
+  margin-right: 100px;
+}
+
+.align-center {
+}
+
+td {
+  text-align: center;
+}
+
+.margin-left-body {
+  margin-left: 100px;
+}
+
+.margin-left-button {
+  margin-left: 20px;
+}
+
+.margin-bottom-table {
+  margin-bottom: 15px;
+}
+
+button {
+  margin-top: 15px;
+  float: left;
+}
