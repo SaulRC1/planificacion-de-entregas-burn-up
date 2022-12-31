@@ -9,7 +9,8 @@
         <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/clases-comunes/flexbox.css" >
         <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/clases-comunes/fuentes.css" >
         <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/historia-4/tarea-2-4/ventana-historia.css">
-        
+        <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/clases-comunes/botones.css">
+
         <script src="${pageContext.request.contextPath}/js/historia-2/tarea-1/menu-ventana-de-proyecto.js" defer></script>
         <script src="${pageContext.request.contextPath}/js/historia-2/tarea-1/ventana-de-proyecto.js" defer></script>
         <script src="${pageContext.request.contextPath}/js/historia-4/tarea-2-4/ventana-historia.js" defer></script>
@@ -21,15 +22,52 @@
             <div class="div-titulo flexbox-row flex-align-center flexbox-justify-center">
                 <p class="roboto-condensed">${proyecto.nombreDeProyecto}</p>
             </div>
-            
+
             <!-- Menu de opciones -->
             <jsp:include page="menu-ventana-proyecto.jsp"/>
-            
+
             <!-- Seccion principal -->
-            <div>
-                
+            <div class="project-section flexbox-column flexbox-justify-start">
+
+                <table class="project-table">
+
+                    <tr>
+                        <th>Historia de Usuario</th>
+                        <th>Valor</th>
+                        <th>Tarea</th>
+                        <th>Prioridad</th>
+                        <th>Metrica de viabilidad (Valor * Prioridad)</th>
+                        <th>Esfuerzo</th>
+                    </tr>
+
+                    <c:forEach items="${historiasDeUsuario}" var="historia">
+                        <c:forEach items="${historia.listaDeTareas}" var="tarea">
+                            <tr>
+                                <td>${tarea.historia.nombreDeHistoria}</td>
+                                <td>${tarea.historia.valorAportado}</td>
+                                <td>${tarea.nombreDeTarea}</td>
+                                <td>${tarea.prioridad}</td>
+                                <td>${tarea.historia.valorAportado * tarea.prioridad}</td>
+                                <td>${tarea.esfuerzo}</td>
+                            </tr>
+                        </c:forEach>
+                    </c:forEach>
+
+
+                </table>
+
             </div>
-            
+
+            <div class="project-planification-div flexbox-row flexbox-justify-end flex-align-center">
+
+                <button type="button">
+                    Generar gráfica burn-up
+                </button>
+
+                <button type="button">
+                    Planificar
+                </button>
+            </div>
         </div>
     </body>
 </html>

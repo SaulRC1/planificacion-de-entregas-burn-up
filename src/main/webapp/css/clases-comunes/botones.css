@@ -1,0 +1,9 @@
+.menu-button {
+    background-color: transparent;
+    border: none;
+}
+
+.menu-button:hover {
+    background-color: #353935;
+    color: white;
+}

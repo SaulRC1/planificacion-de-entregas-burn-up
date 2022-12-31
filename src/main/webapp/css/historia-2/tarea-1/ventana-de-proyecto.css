@@ -19,11 +19,35 @@ html, body {
 .div-titulo {
     width: 100%;
     height: 50px;
-    background-color: green;
+    background-color: #301b90;
+    color: white;
 }
 
 .menu-div {
     width: 100%;
     height: 50px;
-    background-color: purple;
+    background-color: #7c57c1;
+}
+
+
+.project-section {
+    width: 100%;
+    height: calc(100% - 150px);
+    background-color: blue;
+    overflow: auto;
+}
+
+.project-table {
+    border: 1px solid black;
+    margin:20px;
+}
+
+.project-table tr, th, td {
+    border: 1px solid black;
+}
+
+.project-planification-div {
+    width: 100%;
+    height: 50px;
+    background-color: pink;
 }

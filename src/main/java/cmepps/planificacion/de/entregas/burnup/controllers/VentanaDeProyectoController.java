@@ -37,7 +37,11 @@ public class VentanaDeProyectoController {
             
             session.setAttribute("proyecto", proyecto);
             
+            //Añadimos proyecto al JSP
             model.addAttribute("proyecto", proyecto);
+            
+            //Añadimos historias de usuario al JSP
+            model.addAttribute("historiasDeUsuario", proyecto.getHistoriasDeUsuario());
         
             return "historia-2/tarea-1/ventana-de-proyecto";
             
