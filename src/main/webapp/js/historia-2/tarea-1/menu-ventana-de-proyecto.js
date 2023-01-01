@@ -8,7 +8,20 @@ document.getElementById("boton-añadir-historia").addEventListener("click", () =
     
 });
 
-
+document.getElementById("boton-ajustes-proyecto").addEventListener("click", () => {
+   
+    let floatWindowBackground = document.getElementById("float-window-background");
+    
+    if(floatWindowBackground.style.display === "flex") {
+        
+        floatWindowBackground.style.display = "none";
+    
+    } else {
+        
+        floatWindowBackground.style.display = "flex";
+    }
+    
+});
 
 
 

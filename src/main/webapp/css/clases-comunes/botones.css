@@ -1,9 +1,36 @@
 .menu-button {
     background-color: transparent;
     border: none;
+    cursor: pointer;
+    color: white;
 }
 
 .menu-button:hover {
-    background-color: #353935;
+    background-color: #301b90;
+    color: white;
+}
+
+.action-button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    color: white;
+}
+
+.action-button:hover {
+    color: #301b90;
+    background-color: whitesmoke;
+}
+
+.floating-window-button {
+    background-color: white;
+    border: none;
+    color: #301b90;
+    cursor: pointer;
+}
+
+.floating-window-button:hover {
+    border: 2px solid white;
+    background-color: #301b90;
     color: white;
 }
