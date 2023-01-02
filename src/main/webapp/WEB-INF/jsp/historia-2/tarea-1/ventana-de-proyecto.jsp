@@ -17,16 +17,16 @@
         <script src="${pageContext.request.contextPath}/js/historia-2/tarea-1/ventana-ajustes-proyecto.js" defer></script>
         <script src="${pageContext.request.contextPath}/js/historia-2/tarea-1/ventana-de-proyecto.js" defer></script>
         <script src="${pageContext.request.contextPath}/js/historia-4/tarea-2-4/ventana-historia.js" defer></script>
-        
+
     </head>
     <body>      
         <div class="main-div flexbox-column flexbox-justify-start">
-            
+
             <div id="float-window-background" class="flexbox-column flexbox-justify-center flex-align-center floating-window-background">
                 <jsp:include page="ventana-ajustes-proyecto.jsp" />
                 <jsp:include page="../../historia-4/tarea-2-4/ventana-historia-editar.jsp" />
             </div>
-            
+
             <jsp:include page="../../historia-4/tarea-2-4/ventana-historia.jsp" />
             
             <!-- Titulo del proyecto -->
@@ -52,16 +52,30 @@
                     </tr>
 
                     <c:forEach items="${historiasDeUsuario}" var="historia">
-                        <c:forEach items="${historia.listaDeTareas}" var="tarea">
-                            <tr>
-                                <td>${tarea.historia.nombreDeHistoria}</td>
-                                <td>${tarea.historia.valorAportado}</td>
-                                <td>${tarea.nombreDeTarea}</td>
-                                <td>${tarea.prioridad}</td>
-                                <td>${tarea.historia.valorAportado * tarea.prioridad}</td>
-                                <td>${tarea.esfuerzo}</td>
-                            </tr>
-                        </c:forEach>
+                        <c:choose>
+                            <c:when test="${not empty historia.listaDeTareas}">
+                                <c:forEach items="${historia.listaDeTareas}" var="tarea">
+                                    <tr>
+                                        <td>${tarea.historia.nombreDeHistoria}</td>
+                                        <td>${tarea.historia.valorAportado}</td>
+                                        <td>${tarea.nombreDeTarea}</td>
+                                        <td>${tarea.prioridad}</td>
+                                        <td>${tarea.historia.valorAportado * tarea.prioridad}</td>
+                                        <td>${tarea.esfuerzo}</td>
+                                    </tr>
+                                </c:forEach>
+                            </c:when>    
+                            <c:otherwise>
+                                <tr>
+                                    <td>${historia.nombreDeHistoria}</td>
+                                    <td>${historia.valorAportado}</td>
+                                    <td>-------------</td>
+                                    <td>-------------</td>
+                                    <td>-------------</td>
+                                    <td>-------------</td>
+                                </tr>
+                            </c:otherwise>
+                        </c:choose>
                     </c:forEach>
 
 
