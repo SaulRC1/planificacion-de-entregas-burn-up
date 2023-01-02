@@ -1,7 +1,9 @@
 //############################## LISTENERS ###########################
 
 document.getElementById("id-boton-crear-proyecto").addEventListener("click", () => {
-    alert("boton-presionado: se crea un proyecto");
+    let floatinwindow=document.getElementById("float-window-background");
+    floatinwindow.style.display="flex";
+    
 });
 
 

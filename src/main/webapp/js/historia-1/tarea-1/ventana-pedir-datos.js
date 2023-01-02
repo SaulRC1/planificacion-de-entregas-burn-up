@@ -1,7 +1,8 @@
 //############################## LISTENERS ###########################
 
 document.getElementById("id-boton-cancelar-proyecto").addEventListener("click", () => {
-    alert("boton-presionado: se cancela el proyecto");
+    let floatinwindow=document.getElementById("float-window-background");
+    floatinwindow.style.display="none";
 });
 
 document.getElementById("id-boton-siguiente").addEventListener("click", () => {
