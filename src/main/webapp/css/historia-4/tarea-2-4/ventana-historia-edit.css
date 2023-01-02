@@ -1,10 +1,9 @@
 .ventana-historia-edit {
-    position: fixed;
     display: none;
-    width: 800px;
-    height: 600px;
-    background-color: green;
+    width: 600px;
+    height: 400px;
     z-index: 1;
+    border: 5px solid white;
 }
 
 .ventana-historia-edit button{

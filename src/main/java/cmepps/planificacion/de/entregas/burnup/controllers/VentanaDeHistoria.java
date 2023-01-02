@@ -29,7 +29,7 @@ public class VentanaDeHistoria {
 
     @GetMapping
     @ResponseBody
-    public void/*HistoriaDeUsuario*/ doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    public void/*HistoriaDeUsuario*/ doGet(HttpServletRequest request, HttpServletResponse response, ModelMap model) throws IOException {
         String nombreHistoria = request.getParameter("nombre-historia-edit");
         
         HistoriaDeUsuario hdu = historiaService.getHistoriaByName(nombreHistoria);
@@ -40,7 +40,7 @@ public class VentanaDeHistoria {
         System.out.println("La historia pertenece al proyecto: " + hdu.getProyecto().getNombreDeProyecto());
         System.out.println("La descripción es: " + hdu.getDescripcion());
         
-        request.setAttribute("historiaEdit", hdu);
+        model.addAttribute("historiaEdit", hdu);
         
         response.sendRedirect(request.getContextPath() + "/ventana-de-proyecto/" + hdu.getProyecto().getNombreDeProyecto());
     }

@@ -10,9 +10,12 @@ document.getElementById("boton-añadir-historia").addEventListener("click", () =
 
 document.getElementById("boton-editar-historia").addEventListener("click", () => {
     
+    let floatWindowBackground = document.getElementById("float-window-background");
     let ventanaHistoriaEdit = document.getElementsByClassName("ventana-historia-edit")[0];
     
     ventanaHistoriaEdit.style.display = "flex";
+    floatWindowBackground.style.display = "flex";
+    
     
 });
 

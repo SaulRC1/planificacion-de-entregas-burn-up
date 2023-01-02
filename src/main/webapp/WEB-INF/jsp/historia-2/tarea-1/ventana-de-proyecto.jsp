@@ -24,10 +24,11 @@
             
             <div id="float-window-background" class="flexbox-column flexbox-justify-center flex-align-center floating-window-background">
                 <jsp:include page="ventana-ajustes-proyecto.jsp" />
+                <jsp:include page="../../historia-4/tarea-2-4/ventana-historia-editar.jsp" />
             </div>
             
             <jsp:include page="../../historia-4/tarea-2-4/ventana-historia.jsp" />
-            <jsp:include page="../../historia-4/tarea-2-4/ventana-historia-editar.jsp" />
+            
             <!-- Titulo del proyecto -->
             <div class="div-titulo flexbox-row flex-align-center flexbox-justify-center">
                 <p class="roboto-condensed">${proyecto.nombreDeProyecto}</p>
