@@ -47,6 +47,5 @@ public class VentanaPedirDatosController {
     	
     	proyectoServicio.saveProyecto(proyecto);
     	return "redirect:/"+request.getContextPath()+"ventana-de-proyecto/"+nombre;
-    	
     }
 }
