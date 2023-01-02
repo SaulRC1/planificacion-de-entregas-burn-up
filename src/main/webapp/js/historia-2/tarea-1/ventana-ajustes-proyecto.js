@@ -6,4 +6,8 @@ document.getElementById("ajustes-proyect-cancelar-button").addEventListener("cli
     
     floatWindowBackground.style.display = "none";
     
+    let ventanaAjustesProyecto = document.getElementById("ventana-ajustes-de-proyecto");
+        
+    ventanaAjustesProyecto.style.display = "none";
+    
 });
