@@ -1,13 +1,4 @@
-#user-div input{
-    width: 200px;
-}
-
-#description-div input{
-    width: 300px;
-    margin-bottom: 10px;
-}
-
-.ventana-historia {
+.ventana-historia-edit {
     position: fixed;
     display: none;
     width: 800px;
@@ -16,7 +7,7 @@
     z-index: 1;
 }
 
-.ventana-historia button{
+.ventana-historia-edit button{
     padding: 5px 10px;
     margin-left: 20px;
 }

@@ -9,6 +9,7 @@
         <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/clases-comunes/flexbox.css" >
         <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/clases-comunes/fuentes.css" >
         <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/historia-4/tarea-2-4/ventana-historia.css">
+        <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/historia-4/tarea-2-4/ventana-historia-edit.css">
         <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/clases-comunes/botones.css">
 
         <script src="${pageContext.request.contextPath}/js/historia-2/tarea-1/menu-ventana-de-proyecto.js" defer></script>
@@ -24,6 +25,7 @@
             </div>
             
             <jsp:include page="../../historia-4/tarea-2-4/ventana-historia.jsp" />
+            <jsp:include page="../../historia-4/tarea-2-4/ventana-historia-editar.jsp" />
             <!-- Titulo del proyecto -->
             <div class="div-titulo flexbox-row flex-align-center flexbox-justify-center">
                 <p class="roboto-condensed">${proyecto.nombreDeProyecto}</p>

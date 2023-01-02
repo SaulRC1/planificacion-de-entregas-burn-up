@@ -8,6 +8,14 @@ document.getElementById("boton-añadir-historia").addEventListener("click", () =
     
 });
 
+document.getElementById("boton-editar-historia").addEventListener("click", () => {
+    
+    let ventanaHistoriaEdit = document.getElementsByClassName("ventana-historia-edit")[0];
+    
+    ventanaHistoriaEdit.style.display = "flex";
+    
+});
+
 document.getElementById("boton-ajustes-proyecto").addEventListener("click", () => {
    
     let floatWindowBackground = document.getElementById("float-window-background");

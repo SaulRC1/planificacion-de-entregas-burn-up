@@ -38,7 +38,7 @@ public class HistoriaDeUsuarioServiceImpl implements HistoriaDeUsuarioService {
 
     @Override
     public void deleteHistoriaDeUsuario(HistoriaDeUsuario historia) {
-        
+        historiaRepository.delete(historia);
     }
 
     @Override

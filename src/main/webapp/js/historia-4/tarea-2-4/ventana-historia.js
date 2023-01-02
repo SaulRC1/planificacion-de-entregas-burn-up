@@ -8,7 +8,7 @@ document.getElementById("boton-eliminarHistoria").addEventListener("click", () =
     alert("boton-presionado: se elimina la historia en cuestión");
 });
 
-document.getElementById("boton-añadirTarea").addEventListener("click", () => {
+document.getElementById("boton-añadirHistoria").addEventListener("click", () => {
     alert("boton-presionado: se añade la tarea a la historia");
 });
 

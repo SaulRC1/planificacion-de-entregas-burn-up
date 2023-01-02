@@ -3,6 +3,7 @@ package cmepps.planificacion.de.entregas.burnup.controllers;
 import cmepps.planificacion.de.entregas.burnup.models.HistoriaDeUsuario;
 import cmepps.planificacion.de.entregas.burnup.models.Proyecto;
 import cmepps.planificacion.de.entregas.burnup.persistence.services.HistoriaDeUsuarioService;
+import java.io.IOException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -28,14 +29,23 @@ public class VentanaDeHistoria {
 
     @GetMapping
     @ResponseBody
-    public HistoriaDeUsuario doGet(HttpServletRequest request, HttpServletResponse response) {
-        String nombreHistoria = request.getParameter("nombre_historia");
+    public void/*HistoriaDeUsuario*/ doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        String nombreHistoria = request.getParameter("nombre-historia-edit");
         
-        return historiaService.getHistoriaByName(nombreHistoria);
+        HistoriaDeUsuario hdu = historiaService.getHistoriaByName(nombreHistoria);
+        
+        System.out.println("Nombre: " + hdu.getNombreDeHistoria());
+        System.out.println("El usuario de la historia es: "+ hdu.getUsuario());
+        System.out.println("El valor aportado es: " + hdu.getValorAportado());
+        System.out.println("La historia pertenece al proyecto: " + hdu.getProyecto().getNombreDeProyecto());
+        System.out.println("La descripción es: " + hdu.getDescripcion());
+        
+        request.setAttribute("historiaEdit", hdu);
+        
+        response.sendRedirect(request.getContextPath() + "/ventana-de-proyecto/" + hdu.getProyecto().getNombreDeProyecto());
     }
-    
     @PostMapping
-    public void doPost(HttpServletRequest request, HttpSession session) {
+    public String doPost(HttpServletRequest request, HttpSession session) {
         
         String usuarioHistoria = request.getParameter("usuario-historia");
         
@@ -61,6 +71,7 @@ public class VentanaDeHistoria {
         
         historiaService.saveHistoriaDeUsuario(historia);
         
+        return "redirect:/"+request.getContextPath()+"ventana-de-proyecto/" + proyecto.getNombreDeProyecto();
     }
     
     

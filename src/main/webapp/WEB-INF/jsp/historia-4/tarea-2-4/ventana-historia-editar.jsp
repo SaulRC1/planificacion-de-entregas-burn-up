@@ -1,28 +1,15 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<div class="ventana-historia roboto-condensed flexbox-column flexbox-justify-start">
-    <form id="form-add-historia" method="post" action="${pageContext.request.contextPath}/ventana-de-historia">
+<div class="ventana-historia-edit roboto-condensed flexbox-column flexbox-justify-start">
+    
+    <form id="form-edit-historia" method="GET" action="${pageContext.request.contextPath}/ventana-de-historia">
         <!-- Sección de la recogida de datos de la Historia -->
         <div id="user-div">
-            <label>Usuario: </label>
-            <input id="usuario-historia" name="usuario-historia" type="text" required/>
-        </div>
-
-        <div>
-            <label>Nombre de Historia: </label>
-            <input id="nombre-historia" name="nombre-historia" type="text" required/>
-        </div>
-
-        <div>
-            <label>Valor aportado: </label>
-            <input id="valor-historia" name="valor-historia" type="number" required/>
-        </div>
-
-        <div id="description-div">
-            <label>Descripción: </label>
-            <textarea id="description" name="descripcion" ></textarea>
+            <label>¿Qué historia quieres editar?: </label>
+            <input id="nombre-historia-edit" name="nombre-historia-edit" type="text" required/>
         </div>
         
-        <input type="submit" value="Añadir Historia">
+        <input type="submit" value="Editar">
     </form>
+        
 </div>
 
