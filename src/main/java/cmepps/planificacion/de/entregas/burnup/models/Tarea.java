@@ -1,5 +1,6 @@
 package cmepps.planificacion.de.entregas.burnup.models;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -28,6 +29,7 @@ public class Tarea {
     
     private String descripcion;
     
+    @JsonBackReference
     @ManyToOne
     @JoinColumn(name = "historia")
     private HistoriaDeUsuario historia;

@@ -11,10 +11,12 @@
         <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/historia-4/tarea-2-4/ventana-historia.css">
         <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/clases-comunes/botones.css">
 
+        <script src="${pageContext.request.contextPath}/js/jquery-3.6.3.min.js" defer></script>
         <script src="${pageContext.request.contextPath}/js/historia-2/tarea-1/menu-ventana-de-proyecto.js" defer></script>
         <script src="${pageContext.request.contextPath}/js/historia-2/tarea-1/ventana-ajustes-proyecto.js" defer></script>
         <script src="${pageContext.request.contextPath}/js/historia-2/tarea-1/ventana-de-proyecto.js" defer></script>
         <script src="${pageContext.request.contextPath}/js/historia-4/tarea-2-4/ventana-historia.js" defer></script>
+        
     </head>
     <body>      
         <div class="main-div flexbox-column flexbox-justify-start">

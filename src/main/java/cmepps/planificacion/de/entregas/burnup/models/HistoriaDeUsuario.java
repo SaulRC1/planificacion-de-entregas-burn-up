@@ -1,5 +1,7 @@
 package cmepps.planificacion.de.entregas.burnup.models;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
@@ -31,9 +33,11 @@ public class HistoriaDeUsuario {
     
     private int valorAportado;
     
+    @JsonManagedReference
     @OneToMany(mappedBy = "historia")
     private List<Tarea> listaDeTareas;
     
+    @JsonBackReference
     @ManyToOne
     @JoinColumn(name = "proyecto")
     private Proyecto proyecto;

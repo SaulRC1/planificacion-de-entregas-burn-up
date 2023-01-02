@@ -1,5 +1,6 @@
 package cmepps.planificacion.de.entregas.burnup.models;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
@@ -28,6 +29,7 @@ public class Proyecto {
     
     private int velocidadDelEquipo;
     
+    @JsonManagedReference
     @OneToMany(mappedBy = "proyecto")
     private List<HistoriaDeUsuario> historiasDeUsuario;
 
