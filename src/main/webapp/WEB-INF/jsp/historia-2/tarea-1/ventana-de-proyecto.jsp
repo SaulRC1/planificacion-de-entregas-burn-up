@@ -10,6 +10,9 @@
         <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/clases-comunes/fuentes.css" >
         <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/historia-4/tarea-2-4/ventana-historia.css">
         <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/historia-4/tarea-2-4/ventana-historia-edit.css">
+        <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/historia-4/tarea-2-4/ventana-historia-delete.css">
+        <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/historia-4/tarea-1-3/ventana-tarea-edit.css">
+        <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/historia-4/tarea-1-3/ventana-tarea-delete.css">
         <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/clases-comunes/botones.css">
 
         <script src="${pageContext.request.contextPath}/js/jquery-3.6.3.min.js" defer></script>
@@ -17,6 +20,7 @@
         <script src="${pageContext.request.contextPath}/js/historia-2/tarea-1/ventana-ajustes-proyecto.js" defer></script>
         <script src="${pageContext.request.contextPath}/js/historia-2/tarea-1/ventana-de-proyecto.js" defer></script>
         <script src="${pageContext.request.contextPath}/js/historia-4/tarea-2-4/ventana-historia.js" defer></script>
+        <script src="${pageContext.request.contextPath}/js/historia-4/tarea-1-3/ventana-tarea.js" defer></script>
         
     </head>
     <body>      
@@ -25,6 +29,9 @@
             <div id="float-window-background" class="flexbox-column flexbox-justify-center flex-align-center floating-window-background">
                 <jsp:include page="ventana-ajustes-proyecto.jsp" />
                 <jsp:include page="../../historia-4/tarea-2-4/ventana-historia-editar.jsp" />
+                <jsp:include page="../../historia-4/tarea-2-4/ventana-historia-eliminar.jsp" />
+                <jsp:include page="../../historia-4/tarea-1-3/ventana-tarea-editar.jsp" />
+                <jsp:include page="../../historia-4/tarea-1-3/ventana-tarea-eliminar.jsp" />
             </div>
             
             <jsp:include page="../../historia-4/tarea-2-4/ventana-historia.jsp" />

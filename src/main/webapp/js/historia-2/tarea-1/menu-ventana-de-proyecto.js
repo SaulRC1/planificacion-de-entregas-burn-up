@@ -19,6 +19,39 @@ document.getElementById("boton-editar-historia").addEventListener("click", () =>
     
 });
 
+document.getElementById("boton-eliminar-historia").addEventListener("click", () => {
+    
+    let floatWindowBackground = document.getElementById("float-window-background");
+    let ventanaHistoriaDelete = document.getElementsByClassName("ventana-historia-delete")[0];
+    
+    ventanaHistoriaDelete.style.display = "flex";
+    floatWindowBackground.style.display = "flex";
+    
+    
+});
+
+document.getElementById("boton-editar-tarea").addEventListener("click", () => {
+    
+    let floatWindowBackground = document.getElementById("float-window-background");
+    let ventanaTareaEdit = document.getElementsByClassName("ventana-tarea-edit")[0];
+    
+    ventanaTareaEdit.style.display = "flex";
+    floatWindowBackground.style.display = "flex";
+    
+    
+});
+
+document.getElementById("boton-eliminar-tarea").addEventListener("click", () => {
+    
+    let floatWindowBackground = document.getElementById("float-window-background");
+    let ventanaTareaDelete = document.getElementsByClassName("ventana-tarea-delete")[0];
+    
+    ventanaTareaDelete.style.display = "flex";
+    floatWindowBackground.style.display = "flex";
+    
+    
+});
+
 document.getElementById("boton-ajustes-proyecto").addEventListener("click", () => {
    
     let floatWindowBackground = document.getElementById("float-window-background");
