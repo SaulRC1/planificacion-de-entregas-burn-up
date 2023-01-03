@@ -19,19 +19,19 @@
         </select>
 
         <label>Nombre:</label>
-        <input id="nombre-tarea-edit" name="nombre-tarea-edit" type="text"/>
+        <input id="nombre-tarea-edit" name="nombre-tarea-edit" value="${historiasDeUsuario.get(0).listaDeTareas.get(0).nombreDeTarea}" type="text"/>
 
 
         <label>Prioridad:</label>
-        <input id="prioridad-tarea-edit" name="prioridad-tarea-edit" type="number"/>
+        <input id="prioridad-tarea-edit" name="prioridad-tarea-edit" value="${historiasDeUsuario.get(0).listaDeTareas.get(0).prioridad}" type="number"/>
 
 
         <label>Esfuerzo:</label>
-        <input id="esfuerzo-tarea-edit" name="esfuerzo-tarea-edit" type="number"/>
+        <input id="esfuerzo-tarea-edit" name="esfuerzo-tarea-edit" value="${historiasDeUsuario.get(0).listaDeTareas.get(0).esfuerzo}" type="number"/>
 
 
         <p>Descripción:</p>
-        <textarea id="descripcion-tarea-edit" name="descripcion-tarea-edit" class="roboto-condensed"></textarea>
+        <textarea id="descripcion-tarea-edit" name="descripcion-tarea-edit" class="roboto-condensed">${historiasDeUsuario.get(0).listaDeTareas.get(0).descripcion}</textarea>
     </form>
 
     <div class="tarea-edit-buttons-div flexbox-row flexbox-justify-center flex-align-center">
