@@ -18,18 +18,27 @@ document.getElementById("select-edit").addEventListener("change", () => {
 document.getElementById("id-boton-cancelar-editar-historia").addEventListener("click", () => {
     
     let floatWindowBackground = document.getElementById("float-window-background");
-
+    let ventanaHistoriaEdit = document.getElementsByClassName("ventana-historia-edit")[0];
+    
+    ventanaHistoriaEdit.style.display = "none";
     floatWindowBackground.style.display = "none";
+});
+
+
+document.getElementById("boton-cancelar-delete-historia").addEventListener("click", () => {
     
+    let floatWindowBackground = document.getElementById("float-window-background");
+    let ventanaHistoriaDelete = document.getElementsByClassName("ventana-historia-delete")[0];
     
+    ventanaHistoriaDelete.style.display = "none";
+    floatWindowBackground.style.display = "none";
 });
 
 
 
 //############################# FUNCIONES #############################
 function processHistoriaData(data, textStatus, jqXHR){
-    
-    
+ 
     let usuarioHistoria = document.getElementById("usuario-historia-edit");
     let nombreHistoria = document.getElementById("nombre-historia-edit");
     let valorHistoria = document.getElementById("valor-historia-edit");

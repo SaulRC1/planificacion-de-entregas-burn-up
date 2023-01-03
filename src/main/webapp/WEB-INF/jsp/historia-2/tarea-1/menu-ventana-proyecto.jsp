@@ -5,11 +5,11 @@
     
     <button id="boton-añadir-historia" type = "button" class="menu-button roboto-condensed project-button" >Añadir Historia</button>
     <button id="boton-editar-historia" type = "button" class="menu-button roboto-condensed project-button">Editar Historia</button>
-    <button type = "button" class="menu-button roboto-condensed project-button">Eliminar Historia</button>
+    <button id="boton-eliminar-historia" type = "button" class="menu-button roboto-condensed project-button">Eliminar Historia</button>
     
     <button type = "button" class="menu-button roboto-condensed project-button">Añadir Tarea</button>
-    <button type = "button" class="menu-button roboto-condensed project-button">Editar Tarea</button>
-    <button type = "button" class="menu-button roboto-condensed project-button">Eliminar Tarea</button>
+    <button id="boton-editar-tarea" type = "button" class="menu-button roboto-condensed project-button">Editar Tarea</button>
+    <button id="boton-eliminar-tarea" type = "button" class="menu-button roboto-condensed project-button">Eliminar Tarea</button>
     
     <button id="boton-ajustes-proyecto" type = "button" class="menu-button roboto-condensed project-button">Ajustes de proyecto</button>
     
