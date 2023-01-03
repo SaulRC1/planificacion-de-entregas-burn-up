@@ -7,6 +7,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 /**
@@ -18,7 +19,8 @@ import javax.persistence.Table;
 public class Tarea {
     
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @SequenceGenerator(allocationSize = 1, initialValue = 100, name = "tarea_sequence")
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "tarea_sequence")
     private long idTarea;
     
     private String nombreDeTarea;

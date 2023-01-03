@@ -2,7 +2,11 @@
 
 document.getElementById("boton-añadir-historia").addEventListener("click", () => {
     
-    let ventanaHistoria = document.getElementsByClassName("ventana-historia")[0];
+    let floatWindowBackground = document.getElementById("float-window-background");
+    
+    floatWindowBackground.style.display = "flex";
+    
+    let ventanaHistoria = document.getElementById("ventana-add-historia");
     
     ventanaHistoria.style.display = "flex";
     

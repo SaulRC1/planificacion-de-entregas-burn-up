@@ -33,10 +33,9 @@
                 <jsp:include page="../../historia-4/tarea-2-4/ventana-historia-eliminar.jsp" />
                 <jsp:include page="../../historia-4/tarea-1-3/ventana-tarea-editar.jsp" />
                 <jsp:include page="../../historia-4/tarea-1-3/ventana-tarea-eliminar.jsp" />
+                <jsp:include page="../../historia-4/tarea-2-4/ventana-historia.jsp" />
             </div>
 
-            <jsp:include page="../../historia-4/tarea-2-4/ventana-historia.jsp" />
-            
             <!-- Titulo del proyecto -->
             <div class="div-titulo flexbox-row flex-align-center flexbox-justify-center">
                 <p class="roboto-condensed">${proyecto.nombreDeProyecto}</p>

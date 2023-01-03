@@ -35,6 +35,39 @@ document.getElementById("boton-cancelar-delete-historia").addEventListener("clic
 });
 
 
+/**
+ * Boton cancelar en la ventana "Añadir Historia"
+ */
+document.getElementById("add-historia-cancelar-button").addEventListener("click", () => {
+    
+    let floatWindowBackground = document.getElementById("float-window-background");
+    
+    floatWindowBackground.style.display = "none";
+    
+    let ventanaHistoria = document.getElementById("ventana-add-historia");
+    
+    ventanaHistoria.style.display = "none";
+    
+    cleanFormInputs();
+});
+
+/**
+ * 
+ */
+document.getElementById("nombre-historia").addEventListener("change", () => {
+   
+    let nombreHistoria = document.getElementById("nombre-historia").value;
+    
+    let url = window.location.origin + "/historia-service/name/" + nombreHistoria;
+    
+    $.ajax({
+        url: url,
+        method: 'GET',
+        success: (data, textStatus, jqXHR) => {checkIfHistoriaExists(data, textStatus, jqXHR);},
+        error: function(jqXHR, textStatus, errorThrown) {/*alert(textStatus);*/}
+    });
+    
+});
 
 //############################# FUNCIONES #############################
 function processHistoriaData(data, textStatus, jqXHR){
@@ -48,4 +81,28 @@ function processHistoriaData(data, textStatus, jqXHR){
     nombreHistoria.value = data.nombreDeHistoria;
     valorHistoria.value = data.valorAportado;
     descripcionHistoria.value = data.descripcion;
+}
+
+function checkIfHistoriaExists(data, textStatus, jqXHR) {
+    
+    if(typeof data.nombreDeHistoria !== "undefined") {
+        
+        let nombreHistoria = document.getElementById("nombre-historia").value = "";
+        
+        alert("ERROR: Ya existe una historia con ese nombre");
+    }
+    
+}
+
+function cleanFormInputs() {
+    
+    let usuarioHistoria = document.getElementById("usuario-historia");
+    let nombreHistoria = document.getElementById("nombre-historia");
+    let valorHistoria = document.getElementById("valor-historia");
+    let descripcionHistoria = document.getElementById("description");
+    
+    usuarioHistoria.value = "";
+    nombreHistoria.value = "";
+    valorHistoria.value = "";
+    descripcionHistoria.value = "";
 }

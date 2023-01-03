@@ -7,9 +7,9 @@
     </div>
 
     <form id="form-delete-historia" class="historia-delete-form-style roboto-condensed flexbox-column flexbox-justify-evenly"
-          method="POST" action="${pageContext.request.contextPath}/historia-service/delete">
+          method="post" action="${pageContext.request.contextPath}/historia-service/delete">
 
-        <label>Selecciona la Tarea que desee borrar:</label>
+        <label>Selecciona la historia que desee borrar:</label>
         <select id="select-historia-delete" name="select-tarea-delete">
             <c:forEach var="historia" items="${historiasDeUsuario}">
                 <option value="${historia.idHistoriaDeUsuario}">${historia.nombreDeHistoria}</option>

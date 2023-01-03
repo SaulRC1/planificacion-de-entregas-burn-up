@@ -33,7 +33,7 @@
     </form>
 
     <div class="historia-edit-buttons-div flexbox-row flexbox-justify-center flex-align-center">
-        <input type="submit" value="Editar" class="floating-window-button historia-edit-buttons roboto-condensed">
+        <input type="submit" value="Editar" form="form-edit-historia" class="floating-window-button historia-edit-buttons roboto-condensed">
         <button id="id-boton-cancelar-editar-historia" class="floating-window-button historia-edit-buttons roboto-condensed" type="button">Cancelar</button>
     </div>
 </div>

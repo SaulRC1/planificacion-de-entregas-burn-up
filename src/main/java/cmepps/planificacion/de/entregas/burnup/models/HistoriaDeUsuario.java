@@ -11,6 +11,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 /**
@@ -22,7 +23,8 @@ import javax.persistence.Table;
 public class HistoriaDeUsuario {
     
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @SequenceGenerator(allocationSize = 1, initialValue = 100, name = "historia_sequence")
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "historia_sequence")
     private long idHistoriaDeUsuario;
     
     private String usuario;

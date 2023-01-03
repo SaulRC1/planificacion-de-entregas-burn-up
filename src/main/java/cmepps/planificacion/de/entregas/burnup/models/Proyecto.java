@@ -8,6 +8,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 /**
@@ -19,7 +20,8 @@ import javax.persistence.Table;
 public class Proyecto {
     
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @SequenceGenerator(allocationSize = 1, initialValue = 10, name = "proyecto_sequence")
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "proyecto_sequence")
     private long idProyecto;
     
     private String nombreDeProyecto;
