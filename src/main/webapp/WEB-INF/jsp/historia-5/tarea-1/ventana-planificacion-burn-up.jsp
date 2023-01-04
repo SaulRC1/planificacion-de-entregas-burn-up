@@ -93,7 +93,7 @@
 <div>
   <button
     id="id-boton-ocultar"
-    class="action-button botones_menu flexbox-column flexbox-justify-center flex-align-center roboto-condensed margin-left-body">
+    class="action-button botones_menu flexbox-column flexbox-justify-center flex-align-center roboto-condensed margin-left-body estilo-boton">
     Ocultar
   </button>
 </div>

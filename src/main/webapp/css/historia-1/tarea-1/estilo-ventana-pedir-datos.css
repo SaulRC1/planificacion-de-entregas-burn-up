@@ -7,27 +7,13 @@
   margin-top: 10px;
 }
 
-.tamanio-input1 {
-  height: 20px;
-  width: 355px;
-}
-
-.tamanio-input2 {
-  height: 20px;
-  width: 220px;
-}
-
-.tamanio-input3 {
-  height: 20px;
-  width: 175px;
-}
-
-.bold {
-  font-weight: bold;
-}
-
 .ventana-introducir-datos{
 	height: 400px;
 	width: 600px;
 	border:5px solid white;
+}
+
+.ventana-pedir-datos button{
+    padding: 5px 10px;
+    margin-left: 20px;
 }
