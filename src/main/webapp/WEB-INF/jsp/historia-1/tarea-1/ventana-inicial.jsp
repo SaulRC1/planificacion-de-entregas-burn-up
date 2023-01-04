@@ -40,7 +40,7 @@ uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
   <body>
     <div class="flexbox-column flexbox-justify-start main-div">
       <div
-        id="float-window-background"
+        id="float-window-background-pedir-datos"
         class="flexbox-column flexbox-justify-center flex-align-center floating-window-background">
         <jsp:include page="ventana-introducir-datos.jsp" />
       </div>

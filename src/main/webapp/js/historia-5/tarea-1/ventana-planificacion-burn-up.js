@@ -1,3 +1,4 @@
 document.getElementById("id-boton-ocultar").addEventListener("click", () => {
-    alert("Se oculta");
+    let floatinwindow=document.getElementById("float-window-background");
+    floatinwindow.style.display="none";
 });

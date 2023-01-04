@@ -1,0 +1,51 @@
+.color_background{
+	
+	background-color: #B895FC;
+}
+
+.estilo-th {
+    background-color: #8256CB;
+    color: white;
+}
+
+.estilo-td {
+    background-color: #9A71E5;
+}
+
+.margin-top{
+	margin-top: 50px;
+}
+
+.estilo-tabla {
+  border-collapse: collapse;
+  border: black solid 1px;
+  width: 85%;
+  margin-left: 100px;
+  margin-right: 100px;
+}
+
+td {
+  text-align: center;
+}
+
+.margin-left-body {
+  margin-left: 100px;
+}
+
+.margin-left-button {
+  margin-left: 20px;
+}
+
+.margin-bottom-table {
+  margin-bottom: 15px;
+}
+
+button {
+  margin-top: 15px;
+  float: left;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}

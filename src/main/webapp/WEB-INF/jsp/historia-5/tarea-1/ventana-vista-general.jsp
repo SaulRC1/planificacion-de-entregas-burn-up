@@ -19,10 +19,7 @@ uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
     <link
       rel="stylesheet"
       type="text/css"
-      href="${pageContext.request.contextPath}/css/historia-5/tarea-1/estilo-ventana-vista-general.css" />
-    <!--<link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
-      rel="stylesheet" /-->
+      href="${pageContext.request.contextPath}/css/historia-5/tarea-1/estilo-ventana-planificacion.css" />
   </head>
 
   <body>

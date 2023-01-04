@@ -5,9 +5,6 @@ document.getElementById("id-boton-cancelar-proyecto").addEventListener("click", 
     floatinwindow.style.display="none";
 });
 
-document.getElementById("id-boton-siguiente").addEventListener("click", () => {
-    alert("boton-presionado: se continua con el proyecto");
-});
 
 
 

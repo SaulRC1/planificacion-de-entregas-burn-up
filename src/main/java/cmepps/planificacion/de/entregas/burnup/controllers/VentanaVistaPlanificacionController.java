@@ -11,12 +11,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
  * @author Gonzalo Casquete Rodríguez
  */
 @Controller
-@RequestMapping("/ventana-general")
-public class VentanaVistaGeneralController {
+@RequestMapping("/ventana-planificacion")
+public class VentanaVistaPlanificacionController {
 
     @GetMapping
     public String doGet(ModelMap model) {
         
-        return "historia-5/tarea-1/ventana-vista-general";
+        return "historia-5/tarea-1/ventana-planificacion-burn-up";
     }
 }

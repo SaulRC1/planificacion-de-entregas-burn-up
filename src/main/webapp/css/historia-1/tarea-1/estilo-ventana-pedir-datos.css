@@ -7,9 +7,19 @@
   margin-top: 10px;
 }
 
-.tamanio-input {
+.tamanio-input1 {
+  height: 20px;
+  width: 355px;
+}
+
+.tamanio-input2 {
   height: 20px;
   width: 220px;
+}
+
+.tamanio-input3 {
+  height: 20px;
+  width: 175px;
 }
 
 .bold {
