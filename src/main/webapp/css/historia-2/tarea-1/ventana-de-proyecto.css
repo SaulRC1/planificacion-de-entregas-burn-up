@@ -124,3 +124,7 @@ html, body {
     padding: 5px;
     font-size: 14px;
 }
+
+#float-window-background-planificacion {
+    display: none;
+}
