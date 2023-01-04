@@ -113,15 +113,19 @@ public class Proyecto {
 
         while (!tareasOrdenadas.isEmpty()) {//Hasta que no esten todas las tareas realizadas, no se acaba
 
-            for (int i = 0; i < tareasOrdenadas.size(); i++) {//Recorremos todas las tareas con los puntos de 1 sprint, hasta que se agoten
-                if (puntosSprintRestantes - tareasOrdenadas.get(i).getEsfuerzo() > 0) {
-                    tareasPlanificadas.add(tareasOrdenadas.get(i));	//Añadimos a la planificacion la tarea tratada
-                    puntosSprintRestantes = puntosSprintRestantes - tareasOrdenadas.get(i).getEsfuerzo();//Actualizamos los puntos restantes
+            List<Tarea> tareasIteracion = new ArrayList<>();
+            
+            tareasIteracion.addAll(tareasOrdenadas);
+            
+            for (int i = 0; i < tareasIteracion.size(); i++) {//Recorremos todas las tareas con los puntos de 1 sprint, hasta que se agoten
+                if (puntosSprintRestantes - tareasIteracion.get(i).getEsfuerzo() > 0) {
+                    tareasPlanificadas.add(tareasIteracion.get(i));	//Añadimos a la planificacion la tarea tratada
+                    puntosSprintRestantes = puntosSprintRestantes - tareasIteracion.get(i).getEsfuerzo();//Actualizamos los puntos restantes
 
                     puntosRestantes.add(puntosSprintRestantes);//Guardamos cuantos puntos restan al realizar la tarea
                     nSprintRealizado.add(sprint);//Guardamos en que sprint se ha hecho la tarea
 
-                    tareasOrdenadas.remove(i);//Eliminamos la tarea de la lista de tareas a tratar
+                    tareasOrdenadas.remove(tareasIteracion.get(i));//Eliminamos la tarea de la lista de tareas a tratar
                 }
 
             }
