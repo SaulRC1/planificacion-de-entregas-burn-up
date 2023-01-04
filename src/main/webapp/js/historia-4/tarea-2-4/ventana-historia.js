@@ -109,6 +109,15 @@ function checkIfHistoriaExists(data, textStatus, jqXHR) {
 
 }
 
+function checkIfHistoriaExistsEdit(data, textStatus, jqXHR) {
+
+    if (typeof data.nombreDeHistoria !== "undefined") {
+        return true;
+    }
+    
+    return false;
+}
+
 function cleanFormInputs() {
 
     let usuarioHistoria = document.getElementById("usuario-historia");
@@ -129,6 +138,27 @@ function validarEditarHistoria() {
         alert("Selecciona una historia");
         return false;
     }
+    
+    let nombreHistoria = document.getElementById("nombre-historia-edit").value;
 
+    let url = window.location.origin + "/historia-service/name/" + nombreHistoria;
+
+    let existeHistoria = false;
+    
+    $.ajax({
+        url: url,
+        method: 'GET',
+        success: (data, textStatus, jqXHR) => {
+            existeHistoria = checkIfHistoriaExistsEdit(data, textStatus, jqXHR);
+        },
+        error: function (jqXHR, textStatus, errorThrown) {/*alert(textStatus);*/},
+        async: false
+    });
+    
+    if(existeHistoria) {
+        alert("ERROR: Ya existe una historia con ese nombre");
+        return false;
+    }
+    
     return true;
 }

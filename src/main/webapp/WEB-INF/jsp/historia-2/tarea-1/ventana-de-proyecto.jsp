@@ -71,8 +71,6 @@
             defer></script>
         </head>
         <body>
-
-
             <div class="main-div flexbox-column flexbox-justify-start">
                 <div
                     id="float-window-background"
