@@ -1,5 +1,6 @@
 package cmepps.planificacion.de.entregas.burnup.controllers;
 
+import cmepps.planificacion.de.entregas.burnup.models.Planificacion;
 import cmepps.planificacion.de.entregas.burnup.models.Proyecto;
 import cmepps.planificacion.de.entregas.burnup.persistence.services.ProyectoService;
 import javax.servlet.http.HttpSession;
@@ -26,11 +27,11 @@ public class VentanaPlanificacionController {
         
         Proyecto proyecto = proyectoService.getProyectoByName(nombreDeProyecto);
         
-        Proyecto proyectoPlanificado = proyecto.planificarProyecto();
+        Planificacion proyectoPlanificado = proyecto.planificarProyecto();
         
         model.addAttribute("proyectoPlanificado", proyectoPlanificado);
         
-        return "";
+        return "historia-5/tarea-1/ventana-planificacion-burn-up";
     }
     
 }
