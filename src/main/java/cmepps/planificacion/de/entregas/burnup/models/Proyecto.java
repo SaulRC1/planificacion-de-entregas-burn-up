@@ -1,6 +1,9 @@
 package cmepps.planificacion.de.entregas.burnup.models;
 
+import cmepps.planificacion.de.entregas.burnup.models.comparator.TareaComparator;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
@@ -84,5 +87,30 @@ public class Proyecto {
         this.idProyecto = idProyecto;
     }
     
+    public Proyecto planificarProyecto() {
+        
+        List<HistoriaDeUsuario> historiasPlanificadas = new ArrayList<>();
+        
+        List<Tarea> tareasOrdenadas = new ArrayList<>();
+                
+        for (HistoriaDeUsuario historia : this.historiasDeUsuario) {
+            
+            List<Tarea> tareasHistoria = historia.getListaDeTareas();
+            
+            for (Tarea tarea : tareasHistoria) {
+                
+                tareasOrdenadas.add(tarea);
+            }
+        }
+        
+        Collections.sort(tareasOrdenadas, new TareaComparator());
+        
+        for (Tarea tarea : tareasOrdenadas) {
+            System.out.println("Tarea: " + tarea.getNombreDeTarea());
+            System.out.println("V*P Tarea: " + (tarea.getHistoria().getValorAportado() * tarea.getPrioridad()));
+        }
+        
+        return null;
+    }
     
 }
