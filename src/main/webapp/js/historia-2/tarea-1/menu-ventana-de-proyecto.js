@@ -58,6 +58,7 @@ document.getElementById("boton-eliminar-tarea").addEventListener("click", () => 
 
 document.getElementById("boton-ajustes-proyecto").addEventListener("click", () => {
    
+    let ventanaAjustesProyecto = document.getElementById("ventana-ajustes-de-proyecto");
     let floatWindowBackground = document.getElementById("float-window-background");
     
     let projectName = getProjectNameFromURL(window.location.href);
@@ -72,19 +73,9 @@ document.getElementById("boton-ajustes-proyecto").addEventListener("click", () =
         success: (data, textStatus, jqXHR) => {processProjectData(data, textStatus, jqXHR);},
         error: function(jqXHR, textStatus, errorThrown) {alert(textStatus);}
     });
-    
-    if(floatWindowBackground.style.display === "flex") {
-        
-        floatWindowBackground.style.display = "none";
-    
-    } else {
-        
-        floatWindowBackground.style.display = "flex";
-        
-        let ventanaAjustesProyecto = document.getElementById("ventana-ajustes-de-proyecto");
-        
-        ventanaAjustesProyecto.style.display = "flex";
-    }
+ 
+    floatWindowBackground.style.display = "flex";   
+    ventanaAjustesProyecto.style.display = "flex";
     
 });
 
