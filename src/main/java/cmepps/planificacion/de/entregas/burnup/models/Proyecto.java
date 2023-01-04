@@ -21,75 +21,73 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "proyecto")
 public class Proyecto {
-    
-    @Id
-    @SequenceGenerator(allocationSize = 1, initialValue = 10, name = "proyecto_sequence")
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "proyecto_sequence")
-    private long idProyecto;
-    
-    private String nombreDeProyecto;
-    
-    //Se especifica en semanas
-    private int duracionDelSprint;
-    
-    private int velocidadDelEquipo;
-    
-    @JsonManagedReference
-    @OneToMany(mappedBy = "proyecto")
-    private List<HistoriaDeUsuario> historiasDeUsuario;
 
-    public Proyecto() {
-    }
+	@Id
+	@SequenceGenerator(allocationSize = 1, initialValue = 10, name = "proyecto_sequence")
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "proyecto_sequence")
+	private long idProyecto;
 
-    public Proyecto(String nombreDeProyecto, int duracionDelSprint, int velocidadDelEquipo) {
-        this.nombreDeProyecto = nombreDeProyecto;
-        this.duracionDelSprint = duracionDelSprint;
-        this.velocidadDelEquipo = velocidadDelEquipo;
-    }
+	private String nombreDeProyecto;
 
-    public String getNombreDeProyecto() {
-        return nombreDeProyecto;
-    }
+	// Se especifica en semanas
+	private int duracionDelSprint;
 
-    public void setNombreDeProyecto(String nombreDeProyecto) {
-        this.nombreDeProyecto = nombreDeProyecto;
-    }
+	private int velocidadDelEquipo;
 
-    public int getDuracionDelSprint() {
-        return duracionDelSprint;
-    }
+	@JsonManagedReference
+	@OneToMany(mappedBy = "proyecto")
+	private List<HistoriaDeUsuario> historiasDeUsuario;
 
-    public void setDuracionDelSprint(int duracionDelSprint) {
-        this.duracionDelSprint = duracionDelSprint;
-    }
+	public Proyecto() {
+	}
 
-    public int getVelocidadDelEquipo() {
-        return velocidadDelEquipo;
-    }
+	public Proyecto(String nombreDeProyecto, int duracionDelSprint, int velocidadDelEquipo) {
+		this.nombreDeProyecto = nombreDeProyecto;
+		this.duracionDelSprint = duracionDelSprint;
+		this.velocidadDelEquipo = velocidadDelEquipo;
+	}
 
-    public void setVelocidadDelEquipo(int velocidadDelEquipo) {
-        this.velocidadDelEquipo = velocidadDelEquipo;
-    }
+	public String getNombreDeProyecto() {
+		return nombreDeProyecto;
+	}
 
-    public List<HistoriaDeUsuario> getHistoriasDeUsuario() {
-        return historiasDeUsuario;
-    }
+	public void setNombreDeProyecto(String nombreDeProyecto) {
+		this.nombreDeProyecto = nombreDeProyecto;
+	}
 
-    public void setHistoriasDeUsuario(List<HistoriaDeUsuario> historiasDeUsuario) {
-        this.historiasDeUsuario = historiasDeUsuario;
-    }
+	public int getDuracionDelSprint() {
+		return duracionDelSprint;
+	}
 
-    public long getIdProyecto() {
-        return idProyecto;
-    }
+	public void setDuracionDelSprint(int duracionDelSprint) {
+		this.duracionDelSprint = duracionDelSprint;
+	}
 
-    public void setIdProyecto(long idProyecto) {
-        this.idProyecto = idProyecto;
-    }
-    
-    public Proyecto planificarProyecto() {
-        
-        List<HistoriaDeUsuario> historiasPlanificadas = new ArrayList<>();
+	public int getVelocidadDelEquipo() {
+		return velocidadDelEquipo;
+	}
+
+	public void setVelocidadDelEquipo(int velocidadDelEquipo) {
+		this.velocidadDelEquipo = velocidadDelEquipo;
+	}
+
+	public List<HistoriaDeUsuario> getHistoriasDeUsuario() {
+		return historiasDeUsuario;
+	}
+
+	public void setHistoriasDeUsuario(List<HistoriaDeUsuario> historiasDeUsuario) {
+		this.historiasDeUsuario = historiasDeUsuario;
+	}
+
+	public long getIdProyecto() {
+		return idProyecto;
+	}
+
+	public void setIdProyecto(long idProyecto) {
+		this.idProyecto = idProyecto;
+	}
+
+	public Proyecto planificarProyecto() {
         
         List<Tarea> tareasOrdenadas = new ArrayList<>();
                 
@@ -103,14 +101,50 @@ public class Proyecto {
             }
         }
         
-        Collections.sort(tareasOrdenadas, new TareaComparator());
+        Collections.sort(tareasOrdenadas, new TareaComparator());//Ordena las tareas segun v*p
         
-        for (Tarea tarea : tareasOrdenadas) {
-            System.out.println("Tarea: " + tarea.getNombreDeTarea());
-            System.out.println("V*P Tarea: " + (tarea.getHistoria().getValorAportado() * tarea.getPrioridad()));
-        }
+        
+        List<Tarea> tareasPlanificadas =new ArrayList<>();//Lista de tareas planificadas
+        
+        int puntosSprintRestantes=this.velocidadDelEquipo;//Esfuerzo disponible por sprint
+        
+        List<Integer> puntosRestantes=new ArrayList();//Lista de esfuerzos restantes segun la tarea realziada en ese momento
+        List<Integer> nSprintRealizado=new ArrayList();//Numero de Sprint en el que se realiza la tarea
+        int sprint=1;
+        
+        while(!tareasOrdenadas.isEmpty()){//Hasta que no esten todas las tareas realizadas, no se acaba
+        	
+        	for(int i=0;i<tareasOrdenadas.size();i++) {//Recorremos todas las tareas con los puntos de 1 sprint, hasta que se agoten
+        		if(puntosSprintRestantes-tareasOrdenadas.get(i).getEsfuerzo()>0) 
+            	{
+            		tareasPlanificadas.add(tareasOrdenadas.get(i));	//Añadimos a la planificacion la tarea tratada
+            		puntosSprintRestantes=puntosSprintRestantes-tareasOrdenadas.get(i).getEsfuerzo();//Actualizamos los puntos restantes
+            		
+            		puntosRestantes.add(puntosSprintRestantes);//Guardamos cuantos puntos restan al realizar la tarea
+            		nSprintRealizado.add(sprint);//Guardamos en que sprint se ha hecho la tarea
+            		
+            		tareasOrdenadas.remove(i);//Eliminamos la tarea de la lista de tareas a tratar
+            	}	
+        		
+        	}
+        	sprint++;//Incrementamos el sprint
+        	puntosSprintRestantes=this.velocidadDelEquipo;//Reiniciamos los puntos por sprint
+        	
+        } 
+        
+        //Nos quedariamos con: tareasPlanificadas, puntosRestantes y nSprintRealizado
+        
+        
+        System.out.println("Mostrando la informacion:");
+    	for(int i=0;i<tareasPlanificadas.size();i++) { 
+    		
+    		System.out.println("Tarea: "+tareasPlanificadas.get(i).getNombreDeTarea()
+    				+"-esfuerzo:"+tareasPlanificadas.get(i).getEsfuerzo()
+    				+"-sprint:"+nSprintRealizado.get(i)+"-puntosRestantes:"+puntosRestantes.get(i));
+    		
+    	} 
         
         return null;
     }
-    
+
 }
