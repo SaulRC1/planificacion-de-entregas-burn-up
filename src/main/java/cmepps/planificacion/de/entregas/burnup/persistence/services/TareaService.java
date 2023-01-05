@@ -9,10 +9,12 @@ import java.util.Optional;
 
 /**
  *
- * @author SaulWorkStation
+ * @author SaulWorkStation, IsmaelWorkStation
  */
 public interface TareaService {
     public Optional<Tarea> getTareaById(long id);
+    
+    public Tarea getTareaByName(String nombreTarea);
     
     public void saveTarea(Tarea tarea);
     

@@ -23,7 +23,7 @@ import org.springframework.web.servlet.view.RedirectView;
 
 /**
  *
- * @author Ismael Da Palma Fernández
+ * @author Ismael Da Palma Fernández y Saúl Rodríguez Naranjo
  */
 @Controller
 @RequestMapping(path = "/historia-service")
@@ -103,7 +103,7 @@ public class HistoriaDeUsuarioWebService {
     }
     
     @PostMapping(path = "/delete")
-    public RedirectView deleteHistoria(HttpServletRequest request, @RequestParam(name = "select-tarea-delete") long idHistoria){
+    public RedirectView deleteHistoria(HttpServletRequest request, @RequestParam(name = "select-historia-delete") long idHistoria){
         
         HistoriaDeUsuario historia = historiaService.getHistoriaById(idHistoria).get();
         

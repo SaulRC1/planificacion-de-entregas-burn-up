@@ -9,8 +9,9 @@ import cmepps.planificacion.de.entregas.burnup.models.Tarea;
 
 /**
  *
- * @author SaulWorkStation
+ * @author SaulWorkStation, IsmaelWorkStation
  */
 public interface TareaRepository extends JpaRepository<Tarea, Long>{
     
+    public Tarea findByNombreDeTarea(String nombreTarea);
 }

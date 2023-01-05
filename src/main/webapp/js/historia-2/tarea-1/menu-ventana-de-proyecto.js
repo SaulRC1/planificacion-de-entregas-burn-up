@@ -34,6 +34,18 @@ document.getElementById("boton-eliminar-historia").addEventListener("click", () 
     
 });
 
+document.getElementById("boton-añadir-tarea").addEventListener("click", () => {
+    
+    let floatWindowBackground = document.getElementById("float-window-background");
+    
+    floatWindowBackground.style.display = "flex";
+    
+    let ventanaTarea = document.getElementById("ventana-add-tarea");
+    
+    ventanaTarea.style.display = "flex";
+    
+});
+
 document.getElementById("boton-editar-tarea").addEventListener("click", () => {
     
     let floatWindowBackground = document.getElementById("float-window-background");

@@ -11,7 +11,7 @@ import java.util.List;
  * Esta clase encapsula los valores necesarios para la planificacion burn-up
  * de un proyecto.
  * 
- * @author Saúl Rodríguez Naranjo
+ * @author Saúl Rodríguez Naranjo, Ismael Da Palma Fernández y Gonzalo Casquete Rodríguez
  */
 public class Planificacion {
 

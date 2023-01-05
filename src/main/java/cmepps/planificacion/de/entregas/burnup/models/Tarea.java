@@ -12,7 +12,7 @@ import javax.persistence.Table;
 
 /**
  *
- * @author Saúl Rodríguez Naranjo
+ * @author Saúl Rodríguez Naranjo e Ismael Da Palma Fernández
  */
 @Entity
 @Table(name = "tarea")

@@ -10,7 +10,7 @@
           method="post" action="${pageContext.request.contextPath}/historia-service/delete">
 
         <label>Selecciona la historia que desee borrar:</label>
-        <select id="select-historia-delete" name="select-tarea-delete">
+        <select id="select-historia-delete" name="select-historia-delete">
             <c:forEach var="historia" items="${historiasDeUsuario}">
                 <option value="${historia.idHistoriaDeUsuario}">${historia.nombreDeHistoria}</option>
             </c:forEach>
