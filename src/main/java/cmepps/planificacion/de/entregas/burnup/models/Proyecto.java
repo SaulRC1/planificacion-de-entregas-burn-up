@@ -118,7 +118,7 @@ public class Proyecto {
             tareasIteracion.addAll(tareasOrdenadas);
             
             for (int i = 0; i < tareasIteracion.size(); i++) {//Recorremos todas las tareas con los puntos de 1 sprint, hasta que se agoten
-                if (puntosSprintRestantes - tareasIteracion.get(i).getEsfuerzo() > 0) {
+                if (puntosSprintRestantes - tareasIteracion.get(i).getEsfuerzo() >= 0) {
                     tareasPlanificadas.add(tareasIteracion.get(i));	//Añadimos a la planificacion la tarea tratada
                     puntosSprintRestantes = puntosSprintRestantes - tareasIteracion.get(i).getEsfuerzo();//Actualizamos los puntos restantes
 
