@@ -1,0 +1,44 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+}
+
+.main-div {
+    height: 100%;
+    width: 100%;
+    min-width: 576px;
+    background-color: #B895FC;
+}
+
+.div-titulo {
+    width: 100%;
+    height: 50px;
+    background-color: #301b90;
+    color: white;
+}
+
+.project-planification-div {
+    width: 100%;
+    height: 50px;
+    background-color: #301b90;
+}
+
+.project-action-button {
+    margin-right: 2%;
+}
+
+.project-button {
+    height: 90%;
+    padding: 5px;
+    font-size: 14px;
+}
+
+#grafico-burn-up {
+    width: 100%;
+    height: calc(100% - 100px);
+}
