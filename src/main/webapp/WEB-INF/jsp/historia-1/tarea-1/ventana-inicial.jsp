@@ -70,8 +70,8 @@ uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
                   >${proyect.nombreDeProyecto}</a
                 >
               </td>
-              <td>${proyect.duracionDelSprint}</td>
               <td>${proyect.velocidadDelEquipo}</td>
+              <td>${proyect.duracionDelSprint}</td>
             </tr>
           </c:forEach>
         </table>
