@@ -139,6 +139,7 @@
             <div
                 class="project-planification-div flexbox-row flexbox-justify-end flex-align-center">
                 <button
+                    id="generar-grafica-button"
                     type="button"
                     class="action-button roboto-condensed project-button project-action-button">
                     Generar gráfica burn-up
