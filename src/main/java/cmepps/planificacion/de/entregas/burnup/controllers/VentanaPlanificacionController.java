@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 /**
  *
- * @author Saúl Rodríguez Naranjo
+ * @author Gonzalo Casquete Rodríguez
  */
 @Controller
 @RequestMapping("/planificacion")
