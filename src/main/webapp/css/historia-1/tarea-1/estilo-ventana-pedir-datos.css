@@ -33,11 +33,16 @@
     color: white;
 }
 
-.introducir-datos-form textarea {
+.introducir-datos-form-style textarea {
     margin-bottom: 10px;
     font-size: 18px;
     resize: none;
     height: 70px;
+}
+
+.introducir-datos-form-style input {
+    margin-bottom: 10px;
+    font-size: 18px;
 }
 
 .introducir-datos-buttons-div {
