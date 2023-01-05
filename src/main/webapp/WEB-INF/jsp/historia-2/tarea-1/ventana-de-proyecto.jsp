@@ -32,6 +32,10 @@
             <link
                 rel="stylesheet"
                 type="text/css"
+                href="${pageContext.request.contextPath}/css/historia-4/tarea-1-3/ventana-tarea.css" />
+            <link
+                rel="stylesheet"
+                type="text/css"
                 href="${pageContext.request.contextPath}/css/historia-4/tarea-1-3/ventana-tarea-edit.css" />
             <link
                 rel="stylesheet"
@@ -72,19 +76,14 @@
         </head>
         <body>
             <div class="main-div flexbox-column flexbox-justify-start">
-                <div
-                    id="float-window-background"
-                    class="flexbox-column flexbox-justify-center flex-align-center floating-window-background">
+                <div id="float-window-background" class="flexbox-column flexbox-justify-center flex-align-center floating-window-background">
                     <jsp:include page="ventana-ajustes-proyecto.jsp" />
-                    <jsp:include
-                        page="../../historia-4/tarea-2-4/ventana-historia-editar.jsp" />
-                    <jsp:include
-                        page="../../historia-4/tarea-2-4/ventana-historia-eliminar.jsp" />
-                    <jsp:include
-                        page="../../historia-4/tarea-1-3/ventana-tarea-editar.jsp" />
-                    <jsp:include
-                        page="../../historia-4/tarea-1-3/ventana-tarea-eliminar.jsp" />
+                    <jsp:include page="../../historia-4/tarea-2-4/ventana-historia-editar.jsp" />
+                    <jsp:include page="../../historia-4/tarea-2-4/ventana-historia-eliminar.jsp" />
+                    <jsp:include page="../../historia-4/tarea-1-3/ventana-tarea-editar.jsp" />
+                    <jsp:include page="../../historia-4/tarea-1-3/ventana-tarea-eliminar.jsp" />
                     <jsp:include page="../../historia-4/tarea-2-4/ventana-historia.jsp" />
+                    <jsp:include page="../../historia-4/tarea-1-3/ventana-tarea.jsp" />
                 </div>
 
                 <!-- Titulo del proyecto -->

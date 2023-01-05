@@ -10,7 +10,7 @@ import java.util.Optional;
 
 /**
  *
- * @author SaulWorkStation
+ * @author SaulWorkStation, IsmaelWorkStation
  */
 public interface HistoriaDeUsuarioService {
     public Optional<HistoriaDeUsuario> getHistoriaById(long id);

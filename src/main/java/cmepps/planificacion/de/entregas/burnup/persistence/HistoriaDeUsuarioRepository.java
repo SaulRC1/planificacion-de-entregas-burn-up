@@ -9,7 +9,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 /**
  *
- * @author SaulWorkStation
+ * @author SaulWorkStation, IsmaelWorkStation
  */
 public interface HistoriaDeUsuarioRepository extends JpaRepository<HistoriaDeUsuario, Long>{
     

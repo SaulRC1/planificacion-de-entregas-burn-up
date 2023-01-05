@@ -13,7 +13,7 @@ import org.springframework.stereotype.Service;
 
 /**
  *
- * @author Saúl Rodríguez Naranjo
+ * @author Saúl Rodríguez Naranjo e Ismael Da Palma Fernández
  */
 @Service
 public class HistoriaDeUsuarioServiceImpl implements HistoriaDeUsuarioService {

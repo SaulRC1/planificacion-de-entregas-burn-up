@@ -1,12 +1,3 @@
-#user-div input{
-    width: 200px;
-}
-
-#description-div input{
-    width: 300px;
-    margin-bottom: 10px;
-}
-
 .ventana-historia {
     position: fixed;
     display: none;

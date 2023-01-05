@@ -13,7 +13,7 @@ import org.springframework.stereotype.Service;
 
 /**
  *
- * @author Saúl Rodríguez Naranjo
+ * @author Saúl Rodríguez Naranjo e Ismael Da Palma Fernández
  */
 @Service
 public class TareaServiceImpl implements TareaService {
@@ -39,6 +39,11 @@ public class TareaServiceImpl implements TareaService {
     @Override
     public void deleteTarea(Tarea tarea) {
         tareaRepository.delete(tarea);
+    }
+
+    @Override
+    public Tarea getTareaByName(String nombreTarea) {
+        return tareaRepository.findByNombreDeTarea(nombreTarea);
     }
     
     
