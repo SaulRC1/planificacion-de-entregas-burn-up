@@ -46,11 +46,20 @@ public class TareaWebService {
     
     @GetMapping(path = "/name/{nombreTarea}")
     @ResponseBody
-    public Tarea getTareaByName(@PathVariable String nombreTarea) {
+    public Tarea getTareaByName(@PathVariable String nombreTarea, @RequestParam(name = "id-historia") long idHistoria) {
         
-        Tarea tarea = tareaService.getTareaByName(nombreTarea);
+        HistoriaDeUsuario historiaDeUsuario = historiaService.getHistoriaById(idHistoria).get();
+        
+        List<Tarea> listaDeTareas = historiaDeUsuario.getListaDeTareas();
                 
-        return tarea;
+        for (Tarea tarea : listaDeTareas) {
+            
+            if(tarea.getNombreDeTarea().equals(nombreTarea)) {
+                return tarea;
+            }
+        }
+        
+        return null;
     }
     
     @PostMapping(path = "/update")

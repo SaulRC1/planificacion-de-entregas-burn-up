@@ -50,10 +50,12 @@ document.getElementById("boton-cancelar-delete-tarea").addEventListener("click",
 });
 
 document.getElementById("nombre-add-tarea").addEventListener("change", () => {
-
+    
+    let idHistoriaDeTarea = document.getElementById("select-add-tarea").value;
+    
     let nombreTarea = document.getElementById("nombre-add-tarea").value;
 
-    let url = window.location.origin + "/tarea-service/name/" + nombreTarea;
+    let url = window.location.origin + "/tarea-service/name/" + nombreTarea + "?id-historia=" + idHistoriaDeTarea;
 
     $.ajax({
         url: url,
@@ -107,7 +109,10 @@ function checkIfTareaExists(data, textStatus, jqXHR) {
         let nombreTarea = document.getElementById("nombre-add-tarea").value = "";
 
         alert("ERROR: Ya existe una tarea con ese nombre");
+        return true;
     }
+    
+    return false;
 }
 
 function validarEditarTarea() {
@@ -149,4 +154,39 @@ function cleanTareaFormInputs() {
     prioridadTarea.value = "";
     esfuerzoTarea.value = "";
     descripcionTarea.value = "";
+}
+
+function validarAddTarea() {
+    
+    let historiaDeTarea = document.getElementById("select-add-tarea").value;
+    
+    if(historiaDeTarea === "default") {
+        alert("Selecciona una historia, por favor.");
+        return false;
+    }
+    
+    let idHistoriaDeTarea = document.getElementById("select-add-tarea").value;
+    
+    let nombreTarea = document.getElementById("nombre-add-tarea").value;
+
+    let url = window.location.origin + "/tarea-service/name/" + nombreTarea + "?id-historia=" + idHistoriaDeTarea;
+
+    let existeTarea = false;
+    
+    $.ajax({
+        url: url,
+        method: 'GET',
+        success: (data, textStatus, jqXHR) => {
+            existeTarea = checkIfTareaExists(data, textStatus, jqXHR);
+        },
+        error: function (jqXHR, textStatus, errorThrown) {/*alert(textStatus);*/
+        },
+        async: false
+    });
+    
+    if(existeTarea) {
+        return false;
+    }
+    
+    return true;
 }

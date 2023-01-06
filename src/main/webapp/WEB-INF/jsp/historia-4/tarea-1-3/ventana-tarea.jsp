@@ -6,7 +6,8 @@
         <p class="roboto-condensed" >Añadir Tarea</p>
     </div>
 
-    <form id="form-add-tarea" class="ajustes-proyecto-form-style flexbox-column flexbox-justify-evenly" method="post" action="${pageContext.request.contextPath}/tarea-service/save">
+    <form id="form-add-tarea" class="ajustes-proyecto-form-style flexbox-column flexbox-justify-evenly" 
+          onsubmit="return validarAddTarea()" method="post" action="${pageContext.request.contextPath}/tarea-service/save">
 
         <input id="id-historia-add-tarea" name="id-historia-add-tarea" type="text" style="display: none;">
         
