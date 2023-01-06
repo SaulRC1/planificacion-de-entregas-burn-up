@@ -70,7 +70,29 @@ document.getElementById("nombre-historia").addEventListener("change", () => {
 
     let nombreHistoria = document.getElementById("nombre-historia").value;
 
-    let url = window.location.origin + "/historia-service/name/" + nombreHistoria;
+    let nombreProyectoActual = getProjectNameFromURL(window.location.href);
+
+    let host = window.location.host;
+
+    let getURL = "http://" + host + "/proyecto-service/" + nombreProyectoActual;
+
+    let idProyectoActual;
+    
+    $.ajax({
+        url: getURL,
+        method: 'GET',
+        success: (data, textStatus, jqXHR) => {
+
+           idProyectoActual = data.idProyecto;
+
+        },
+        error: function (jqXHR, textStatus, errorThrown) {
+            alert(textStatus);
+        },
+        async: false
+    });
+
+    let url = window.location.origin + "/historia-service/name/" + nombreHistoria + "?id-proyecto=" + idProyectoActual;
 
     $.ajax({
         url: url,
@@ -109,12 +131,19 @@ function checkIfHistoriaExists(data, textStatus, jqXHR) {
 
 }
 
-function checkIfHistoriaExistsEdit(data, textStatus, jqXHR) {
+function checkIfHistoriaExistsEdit(dataHistoria, textStatus, jqXHR, idHistoriaSeleccionada) {
 
-    if (typeof data.nombreDeHistoria !== "undefined") {
-        return true;
+    if (typeof dataHistoria.nombreDeHistoria !== "undefined") {
+        
+        let idHistoriaEncontrada = dataHistoria.idHistoriaDeUsuario;
+        
+        if(idHistoriaEncontrada !== Number(idHistoriaSeleccionada)) {
+            return true;
+        }
+        
+        return false;
     }
-    
+
     return false;
 }
 
@@ -139,26 +168,49 @@ function validarEditarHistoria() {
         return false;
     }
     
+    let nombreProyectoActual = getProjectNameFromURL(window.location.href);
+
+    let host = window.location.host;
+
+    let getURL = "http://" + host + "/proyecto-service/" + nombreProyectoActual;
+
+    let idProyectoActual;
+    
+    $.ajax({
+        url: getURL,
+        method: 'GET',
+        success: (data, textStatus, jqXHR) => {
+
+           idProyectoActual = data.idProyecto;
+
+        },
+        error: function (jqXHR, textStatus, errorThrown) {
+            alert(textStatus);
+        },
+        async: false
+    });
+    
     let nombreHistoria = document.getElementById("nombre-historia-edit").value;
 
-    let url = window.location.origin + "/historia-service/name/" + nombreHistoria;
+    let url = window.location.origin + "/historia-service/name/" + nombreHistoria + "?id-proyecto=" + idProyectoActual;
 
     let existeHistoria = false;
-    
+
     $.ajax({
         url: url,
         method: 'GET',
         success: (data, textStatus, jqXHR) => {
-            existeHistoria = checkIfHistoriaExistsEdit(data, textStatus, jqXHR);
+            existeHistoria = checkIfHistoriaExistsEdit(data, textStatus, jqXHR, historiaEdit.value);
         },
-        error: function (jqXHR, textStatus, errorThrown) {/*alert(textStatus);*/},
+        error: function (jqXHR, textStatus, errorThrown) {/*alert(textStatus);*/
+        },
         async: false
     });
-    
-    if(existeHistoria) {
+
+    if (existeHistoria) {
         alert("ERROR: Ya existe una historia con ese nombre");
         return false;
     }
-    
+
     return true;
 }

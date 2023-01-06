@@ -49,11 +49,25 @@ public class HistoriaDeUsuarioWebService {
     
     @GetMapping(path = "/name/{nombreHistoria}")
     @ResponseBody
-    public HistoriaDeUsuario getHistoriaDeUsuarioByName(@PathVariable String nombreHistoria) {
+    public HistoriaDeUsuario getHistoriaDeUsuarioByName(@PathVariable String nombreHistoria, @RequestParam(name = "id-proyecto") int idProyecto) {
         
-        HistoriaDeUsuario historia = historiaService.getHistoriaByName(nombreHistoria);
+        
+        Proyecto proyecto = proyectoService.getProyectoById(idProyecto).get();
+        
+        if(proyecto != null) {
+            
+            List<HistoriaDeUsuario> historiasDeUsuario = proyecto.getHistoriasDeUsuario();
+            
+            for (HistoriaDeUsuario historia : historiasDeUsuario) {
                 
-        return historia;
+                if(historia.getNombreDeHistoria().equals(nombreHistoria)) {
+                   
+                    return historia;
+                }
+            }
+        }
+        
+        return null;
     }
     
     @PostMapping(path = "/update")
